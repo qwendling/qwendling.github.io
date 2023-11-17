@@ -13,11 +13,13 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	</head>
 	<body>
-		<div class="reveal">
+		<div id="app" class="reveal">
 			<div class="slides">
 				<section>
+
 					<div class="grid">
 						<div class="boxTitle">Couplage géométrie/mécanique pour l'animation d'objets détaillés</div>
 						<div class="delim_hr"></div>
@@ -26,9 +28,30 @@
 							<img src="/Images/icube.png" class="footer img_foot_2" />
 							<img src="/Images/cnrs.svg" class="footer img_foot_3" />
 					</div>
-
 				</section>
-				<section>Slide 2</section>
+				<section>
+					<Slide_contexte />
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Etat de l'art</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Partie 1 : Vues multirésolution</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Partie 2 : Animation adaptative</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Conclusion</div>
+					</div>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +60,22 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
+			const { createApp, ref } = Vue
+			
+		  
+			const app = createApp({
+			  setup() {
+				const message = ref('Hello vue!')
+				return {
+				  message
+				}
+			  }
+			})
+		  </script>
+		<script src="Slides/1-Contexte.js">
+		</script>
+		<script>
+			app.mount("#app");
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/

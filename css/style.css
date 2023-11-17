@@ -21,6 +21,17 @@ h1 {
   width: 100%;
 }
 
+.TitleSlide {
+  grid-column-start: 1;
+  grid-column-end: 11;
+  grid-row-start: 0;
+  grid-row-end: 1;
+  font-size: 60px;
+  align-self: start;
+  text-align: left;
+  font-weight: bold;
+}
+
 .boxTitle {
   grid-column-start: 1;
   grid-column-end: 11;
