@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>These Quentin WENDLING</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,10 +16,10 @@
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	</head>
 	<body>
+		
 		<div id="app" class="reveal">
 			<div class="slides">
 				<section>
-
 					<div class="grid">
 						<div class="boxTitle">Couplage géométrie/mécanique pour l'animation d'objets détaillés</div>
 						<div class="delim_hr"></div>
@@ -35,6 +35,61 @@
 				<section>
 					<div class="grid">
 						<div class="boxTitle">Etat de l'art</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Simulation : Principe</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Simulation : Masse ressort</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Simulation : Basée position</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Simulation : Modèle continue</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Simulation adaptative</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Découpe</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Modèle topologique</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Modèle topologique multirésolution</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Carte combinatoire</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Carte combinatoire multirésolution</div>
+					</div>
+				</section>
+				<section>
+					<div class="grid">
+						<div class="boxTitle">Carte combinatoire multirésolution implicite</div>
 					</div>
 				</section>
 				<section>
@@ -70,7 +125,8 @@
 				  message
 				}
 			  }
-			})
+			});
+			const xhttp = new XMLHttpRequest();
 		  </script>
 		<script src="Slides/1-Contexte.js">
 		</script>
@@ -81,6 +137,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber:true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
