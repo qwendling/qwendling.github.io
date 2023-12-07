@@ -28,6 +28,20 @@ h1 {
   width: 100%;
 }
 
+.grid_multi_col {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.SlideTitle {
+  font-size: 60px;
+  align-self: start;
+  text-align: left;
+  font-weight: bold;
+}
+
 .TitleSlide {
   grid-column-start: 1;
   grid-column-end: 11;
