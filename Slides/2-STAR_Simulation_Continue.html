@@ -1,15 +1,43 @@
+<section>
 <div class ="r-stack SlideTitle ">Simulation : Modèle Continue</div>
 <div class="r-fit-text">
     <ul>
         <li> Calcul de la déformation de l'objet en tout point</li>
         <li> Exprimer une énergie à partir de cette déformation </li>
         <li> Minimiser cette énergie dans le temps </li>
-        <li> Exemples :
-            <ul>
-                <li>FEM</li>
-                <li>SPH</li>
-            </ul>
-        </li>
     </ul>
         
 </div>
+<img class="r-stretch" src="/Images/Airbus_A320_k.jpg"/>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Modèle Continue : Maths</div>
+    \[\begin{aligned}
+  F &amp; = \nabla \phi(x^0)\\
+  \Psi &amp; = \frac{\lambda}{2}(det(F)-\gamma)^2+\frac{\mu}{2}(tr(F^TF)-3)\\
+  f &amp; = -\nabla \Psi
+  \end{aligned} \]
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Exemple : Mèthode des éléments fini</div>
+<div class="r-fit-text">
+    <ul>
+        <li> Objet discrétisé en un ensemble d'éléments</li>
+        <li> Fonction de forme associé à chaque éléments </li>
+        <li> Utilisation des fonction de formee pour résoudre les déformations</li>
+        <li> Plus l'éléments est complexe plus la fonction de forme est complexe</li>
+    </ul>
+</div>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Exemple : SPH</div>
+<div class="r-fit-text">
+    <ul>
+        <li> Utilisé à la base pour la simulation de fluide</li>
+        <li> Utilisation du voisinnage topologique dans le maillage </li>
+        <li> Lissage d'une fonction par une fonction de noyau </li>
+        <li> Dérivé la fonction reviens à dérivé la fonction de noyau </li>
+    </ul>
+        
+</div>
+</section>

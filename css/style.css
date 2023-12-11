@@ -20,6 +20,21 @@ h1 {
   grid-row-end: 9;
 }
 
+.multiCol {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.col {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  padding: 2% 0 2% 3%;
+  &:first-of-type {
+    padding-left: 0;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);

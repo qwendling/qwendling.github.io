@@ -196,6 +196,7 @@
 		</script>
 		<script src="Slides/11-Perspectives.js">
 		</script>
+		<script src="plugin/math/math.js"></script>
 		<script>
 			app.mount("#app");
 			// More info about initialization & config:
@@ -204,9 +205,11 @@
 			Reveal.initialize({
 				hash: true,
 				slideNumber:true,
+				center:false,
+				navigationMode:"linear",
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealMath.KaTeX ]
 			});
 		</script>
 	</body>
