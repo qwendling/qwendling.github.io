@@ -1,14 +1,47 @@
-<div class ="r-stack SlideTitle ">Simulation : Adaptation</div>
-<div class="r-fit-text">
-    <ul>
-        <li> Représentation fine de l'objet => beaucoup de degré de liberté</li>
-        <li> Incompatible avec le temps réel </li>
-        <li> Besoin de pouvoir adapté le niveau de détail localement en fonction des besoins </li>
-        <li> Différentes solutions :
+<section>
+    <div class ="r-stack SlideTitle ">Simulation : Adaptation</div>
+    <div class="r-fit-text">
+
+        <ul> 
+            <li>La plupart des méthodes visent à :</li>
             <ul>
-                <li>Octree</li>
-                <li>Maillage imbriqué</li>
+                <li>  Conserver les détails géométriques et la qualité du rendu </li>
+                <li>  Garantir les performances des simulations </li>
             </ul>
-        </li>
-    </ul> 
-</div>
+            <li>Pour cela, elles utilisent différentes représentations d'un objet :</li>
+            <ul>
+                <li>  Sépare les modèles géométriques et physiques </li>
+                <li>  Permet de réduire ou adapter le nombre de degrés de liberté </li>
+                <li>  Nécessite de synchroniser / coupler ces représentations </li>
+            </ul>
+            <li>  Les méthodes se répartissent en deux catégories :</li>
+            <ul>
+                <li> Plongement dans une structure hiérarchique (Octree...) </li>
+                <li> Hiérarchie / imbrication de maillages </li>
+            </ul>
+        </ul>
+    </div>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Adaptation : Octree</div>
+    <div class="r-fit-text">
+
+        <ul> 
+            <li> Représentation des degrés de liberté grâce à un octree </li>
+            <li> Utilisation de l'octree à différentes résolution </li>
+            <li> Exemple : Méthode de Steinmann et al. </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Adaptation : Maillages imbriqués</div>
+    <div class="r-fit-text">
+
+        <ul> 
+            <li> Hiérarchie de maillages </li>
+            <li> Les maillage n'ont pas de sommets en commun </li>
+            <li> Besoin d'un couplage entre les niveaux </li>
+            <li> Exemple : Méthode de Debunne et al. </li>
+        </ul>
+    </div>
+</section>

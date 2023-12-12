@@ -1,3 +1,4 @@
+<section>
 <div class ="r-stack SlideTitle ">Simulation : Basée position</div>
 <div class="r-fit-text">
     <ul>
@@ -5,11 +6,34 @@
         <li> Forces remplacé par des contraintes sur la position des particules </li>
         <li> Résolution des contraintes dans le temps </li>
         <li> Contraintes exprimable à partir des caractéristiques physique de l'objet </li>
-        <li> Exemple :
-            <ul>
-                <li>Shape Matching basée physique</li>
-            </ul>
-        </li>
     </ul>
         
 </div>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Exemple : Shape Matching</div>
+    <div class="r-fit-text">
+        <ul>
+            <li> Technique de simulation d’objets déformables </li>
+            <li> Basée sur le géométrie de l'objet </li>
+            <li> Objet représenté par sa position courante $X$ et au repos $X^0$</li>
+            <li> Calcul de la transformation $A$ rapprochant $X$ au plus prêt de $X^0$</li>
+        </ul>
+        
+    </div>
+    <img class="r-stretch" src="/Images/Shape_Matching.png"/>
+</section>
+<section>
+    <div class ="r-stack SlideTitle ">Exemple : Shape Matching physique</div>
+    <div class="r-fit-text">
+        <ul>
+            <li> Méthode plus proche des modèle continue </li>
+            <li> Utilise les caractéristique physique de l'objet </li>
+            <li> Décomposition de l'objet en éléments </li>
+            <li> Utilisation du Shape Matching pour approximer le gradient de déformation en chaque éléments</li>
+            <li> Expression d'une énergie à partir de ce gradient </li>
+            <li> Définition de contrainte à partir de cette énergie </li>
+        </ul>
+    </div>
+    <img class="r-stretch" src="/Images/SM_physique.png"/>
+</section>
