@@ -80,7 +80,8 @@ out vec4 fragColor;
 uniform float width;
 
 void main(){
-	vec3 light_pos = vec3(10.0, 8.0, 15.0);
+	vec3 light_pos = vec3(1000.0, 500.0, 150.0);
+    //light_pos=pos;
 
 	float specular = 0.3;
 	float shine = 0.1;
@@ -94,6 +95,8 @@ void main(){
 	float spec = pow(max(dot(R,E), 0.0), specular);
 	vec3 specCol = mix(col, vec3(0.0), shine);
 	fragColor = vec4(mix(col * lamb, specCol, spec), 1.0);
+    fragColor = vec4(col * lamb,1.0);
+    //fragColor = vec4(col*0.75 ,1.0);
 
 	float eps = 0.001;
 	// float width = 0.075;
