@@ -1,3 +1,4 @@
+
 xhttp.onreadystatechange = function () {
   if (this.readyState === 4) {
     if (this.status === 200) {
@@ -9,3 +10,6 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "./Slides/2-STAR_Simulation_Continue.html", false);
 xhttp.send();
+
+
+
