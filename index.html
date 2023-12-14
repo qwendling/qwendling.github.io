@@ -43,9 +43,9 @@
 				<section>
 					<Slide_simulation_continue />
 				</section>
-				<section>
+				<!--<section>
 					<Slide_simulation_discret />
-				</section>
+				</section>-->
 				<section>
 					<Slide_simulation_xpbd />
 				</section>
@@ -218,11 +218,16 @@
 		<script type="module">
 			import {slide_fem} from "./Slides/2-STAR_Simulation_Continue_Display.js";
 			import {slide_multires} from "./Slides/3-STAR_Topologie_Multiresolution_Display.js";
+			//import {slide_vues} from "./Slides/5-5-Vues_Exemples_Display.js";
+
 			slide_fem.init(document.getElementById("FEM_ex"));
 			slide_fem.open();
 
 			slide_multires.init(document.getElementById("MR_0"),document.getElementById("MR_1"),document.getElementById("MR_2"),document.getElementById("MR_3"));
 			slide_multires.open();
+
+			/*slide_vues.init(document.getElementById("Vue_meca"),document.getElementById("Vue_geom"),document.getElementById("Vue_collision"));
+			slide_vues.open();*/
 		</script>
 	</body>
 </html>
