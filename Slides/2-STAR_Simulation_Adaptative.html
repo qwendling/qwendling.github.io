@@ -29,6 +29,8 @@
 
         <ul> 
             <li> Raffinement adaptatif du maillage selon les besoin de la simulation</li>
+            <li> Pas de retour en arrière possible </li>
+            <li> </li>
             <li> Exemple : Méthode de Fléchon et al. </li>
         </ul>
     </div>
@@ -59,4 +61,32 @@
         
     </div>
     <img class="r-stretch" src="/Images/Otaduy.png"/>
+</section>
+<section>
+    <table>
+        <tr>
+          <th>Méthode</th>
+          <th>Simplification</th>
+          <th>Découpe</th>
+          <th>Gestion détails géométrique</th>
+        </tr>
+        <tr>
+          <td>Remaillage</td>
+          <td>Non</td>
+          <td>Oui</td>
+          <td>Détails utilisé dans la simulation</td>
+        </tr>
+        <tr>
+            <td>Octree</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Plongement surface fine</td>
+        </tr>
+        <tr>
+            <td>Maillages imbriqués</td>
+          <td>Oui</td>
+          <td>Non</td>
+          <td>Maillage le plus fin</td>
+        </tr>
+      </table>
 </section>

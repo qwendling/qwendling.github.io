@@ -41,6 +41,9 @@
 					<Slide_simulation_principe />
 				</section>
 				<section>
+					<Slide_topologie_monoresolution />
+				</section>
+				<section>
 					<Slide_simulation_continue />
 				</section>
 				<!--<section>
@@ -77,9 +80,7 @@
 					<div class ="r-stack SlideTitle ">Vues multirésolution : un modèle topologique multirésolution adaptatif</div>
 					<img class="r-stretch"  src="/Images/Vues_teaser.png" />
 				</section>
-				<section>
-					<Slide_topologie_monoresolution />
-				</section>
+				
 				<!--<section>
 					<Slide_topologie_cmap />
 				</section>-->
@@ -215,12 +216,20 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				slideNumber:true,
+				slideNumber:'c',
 				center:false,
 				navigationMode:"linear",
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealMath.KaTeX ]
+			});
+			Reveal.on('slidechanged',event => {
+				if(event.currentSlide.id === 'Slide_CMap'){
+					document.getElementById("video_CMap").play();
+				}
+				if(event.previousSlide.id === 'Slide_CMap'){
+					document.getElementById("video_CMap").pause();
+				}
 			});
 		</script>
 		<script type="module">
