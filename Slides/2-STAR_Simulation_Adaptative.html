@@ -1,96 +1,94 @@
 <section>
-    <div class ="r-stack SlideTitle ">Simulation : Adaptation</div>
+    <div class="r-stack SlideTitle ">Méthodes adaptatives</div>
     <div class="r-fit-text">
 
-        <ul> 
+        <ul>
             <li>La plupart des méthodes visent à :</li>
             <ul>
-                <li>  Conserver les détails géométriques et la qualité du rendu </li>
-                <li>  Garantir les performances des simulations </li>
+                <li>Conserver les détails géométriques et la qualité du rendu</li>
+                <li>Garantir les performances des calculs</li>
             </ul>
-            <li>Pour cela, elles utilisent différentes représentations d'un objet :</li>
+            <li>Elles utilisent différentes représentations d'un objet :</li>
             <ul>
-                <li>  Sépare les modèles géométriques et physiques </li>
-                <li>  Permet de réduire ou adapter le nombre de degrés de liberté </li>
-                <li>  Nécessite de synchroniser / coupler ces représentations </li>
+                <li>Séparation des modèles géométriques et physiques</li>
+                <li>Réduction ou adaptation du nombre de degrés de liberté</li>
+                <li>=>Nécessite de synchroniser / coupler ces représentations</li>
             </ul>
-            <li>  Les méthodes se répartissent en trois catégories :</li>
+            <li>Ces méthodes se répartissent en trois catégories :</li>
             <ul>
-                <li> Remaillage </li>
-                <li> Plongement dans une structure hiérarchique (Octree...) </li>
-                <li> Hiérarchie / imbrication de maillages </li>
+                <li>Remaillage local</li>
+                <li>Plongement dans une structure hiérarchique (Octree...)</li>
+                <li>Hiérarchie ou imbrication de maillages</li>
             </ul>
         </ul>
     </div>
 </section>
 <section>
-    <div class ="r-stack SlideTitle ">Adaptation : Remaillage</div>
+    <div class="r-stack SlideTitle ">Adaptation : Remaillage</div>
+    <div class="r-fit-text">
+        <ul>
+            <li>Raffinement adaptatif du maillage selon les besoin de la simulation</li>
+            <li>Pas de retour en arrière possible</li>
+            <li>Exemple : Méthode de Fléchon et al.</li>
+        </ul>
+    </div>
+    <img class="r-stretch" src="Images/Fléchon.png" />
+</section>
+<section>
+    <div class="r-stack SlideTitle ">Adaptation : Octree</div>
     <div class="r-fit-text">
 
-        <ul> 
-            <li> Raffinement adaptatif du maillage selon les besoin de la simulation</li>
-            <li> Pas de retour en arrière possible </li>
-            <li> </li>
-            <li> Exemple : Méthode de Fléchon et al. </li>
+        <ul>
+            <li>Association des degrés de liberté aux noeuds d'un octree</li>
+            <li>Parcours de l'octree à différentes profondeurs</li>
+            <li>Exemple : Méthode de Steinmann et al.</li>
         </ul>
     </div>
-    <img class="r-stretch" src="/Images/Fléchon.png"/>
+    <img class="r-stretch" src="/Images/steinmann.png" />
 </section>
 <section>
-    <div class ="r-stack SlideTitle ">Adaptation : Octree</div>
+    <div class="r-stack SlideTitle ">Adaptation : Maillages imbriqués</div>
     <div class="r-fit-text">
 
-        <ul> 
-            <li> Représentation des degrés de liberté grâce à un octree </li>
-            <li> Utilisation de l'octree à différentes résolution </li>
-            <li> Exemple : Méthode de Steinmann et al. </li>
+        <ul>
+            <li>Hiérarchie de maillages</li>
+            <li>Les maillage n'ont pas de sommets en commun</li>
+            <li>Besoin d'un couplage entre ces maillages</li>
+            <li>Exemple : Méthode de Otaduy et al.</li>
         </ul>
+
     </div>
-    <img class="r-stretch" src="/Images/steinmann.png"/>
-</section>
-<section>
-    <div class ="r-stack SlideTitle ">Adaptation : Maillages imbriqués</div>
-    <div class="r-fit-text">
- 
-        <ul> 
-            <li> Hiérarchie de maillages </li>
-            <li> Les maillage n'ont pas de sommets en commun </li>
-            <li> Besoin d'un couplage entre les niveaux </li>
-            <li> Exemple : Méthode de Otaduy et al. </li>
-        </ul>
-        
-    </div>
-    <img class="r-stretch" src="/Images/Otaduy.png"/>
+    <img class="r-stretch" src="Images/Otaduy.png" />
 </section>
 <section>
     <table class="r-fit-text">
         <tr>
-          <th>Méthode</th>
-          <th>Simplification</th>
-          <th>Découpe</th>
-          <th>Gestion détails géométrique</th>
-          <th>Topologie complète</th>
+            <th>Méthode</th>
+            <th>Simplification</th>
+            <th>Découpe</th>
+            <th>Gestion détails géométrique</th>
+            <th>Topologie complète</th>
         </tr>
         <tr>
-          <td>Remaillage</td>
-          <td>Non</td>
-          <td>Oui</td>
-          <td>Détails utilisé dans la simulation</td>
-          <td>Oui</td>
+            <td>Remaillage</td>
+            <td>Non</td>
+            <td>Oui</td>
+            <td>Détails utilisé dans la simulation</td>
+            <td>Oui</td>
         </tr>
         <tr>
             <td>Octree</td>
-          <td>Oui</td>
-          <td>Oui</td>
-          <td>Plongement surface fine</td>
-          <td>Non</td>
+            <td>Oui</td>
+            <td>Oui</td>
+            <td>Plongement surface fine</td>
+            <td>Non</td>
         </tr>
         <tr>
             <td>Maillages imbriqués</td>
-          <td>Oui</td>
-          <td>Non</td>
-          <td>Maillage le plus fin</td>
-          <td>Non</td>
+            <td>Oui</td>
+            <td>Non</td>
+            <td>Maillage le plus fin</td>
+            <td>Non</td>
         </tr>
-      </table>
+    </table>
 </section>

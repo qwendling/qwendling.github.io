@@ -1,49 +1,49 @@
 <section>
-<div class ="r-stack SlideTitle ">Simulation : Modèle Continue</div>
-<div class="r-fit-text">
-    <ul>
-        <li> Calcul de la déformation de l'objet en tout point</li>
-        <li> Exprimer une énergie à partir de cette déformation </li>
-        <li> Minimiser cette énergie dans le temps </li>
-    </ul>
-        
-</div>
-<img class="r-stretch" src="/Images/Airbus_A320_k.jpg"/>
+    <div class="r-stack SlideTitle ">Simulation : modèles continus</div>
+    <div class="r-fit-text">
+        <ul>
+            <li>Calcul de la déformation de l'objet en tout point</li>
+            <li>Exprimer une énergie à partir de cette déformation</li>
+            <li>Minimiser cette énergie dans le temps</li>
+        </ul>
+
+    </div>
+    <img class="r-stretch" src="Images/Airbus_A320_k.jpg" />
 </section>
 <section>
-    <div class ="r-stack SlideTitle ">Modèle Continue : Maths</div>
+    <div class="r-stack SlideTitle ">Modèles Continus</div>
     \[\begin{aligned}
-  F &amp; = \nabla \phi(x^0)\\
-  \Psi &amp; = \frac{\lambda}{2}(det(F)-\gamma)^2+\frac{\mu}{2}(tr(F^TF)-3)\\
-  f &amp; = -\nabla \Psi
-  \end{aligned} \]
-  <img class="r-stretch" src="/Images/Deformation.png"/>
+    F &amp; = \nabla \phi(x^0)\\
+    \Psi &amp; = \frac{\lambda}{2}(det(F)-\gamma)^2+\frac{\mu}{2}(tr(F^TF)-3)\\
+    f &amp; = -\nabla \Psi
+    \end{aligned} \]
+    <img class="r-stretch" src="Images/Deformation.png" />
 </section>
 <section>
-    <div class ="r-stack SlideTitle ">Exemple : Mèthode des éléments fini</div>
-<div class="r-fit-text">
-    <ul>
-        <li> Objet discrétisé en un ensemble d'éléments</li>
-        <li> Fonction de forme associé à chaque éléments </li>
-        <li> Utilisation des fonction de formee pour résoudre les déformations</li>
-        <li> Plus l'éléments est complexe plus la fonction de forme est complexe</li>
-    </ul>
-    
-</div>
-<div class="r-hstack">
-    <canvas id="FEM_ex" width="550" height="360" ></canvas>	
-</div>
+    <div class="r-stack SlideTitle ">Mèthode des éléments finis</div>
+    <div class="r-fit-text">
+        <ul>
+            <li>Objet discrétisé en un ensemble d'éléments</li>
+            <li>Fonctions de forme associées à chaque éléments </li>
+            <li>Utilisation des fonctions de forme pour résoudre les déformations</li>
+            <li>Plus l'élément est complexe plus la fonction de forme l'est aussi</li>
+        </ul>
+
+    </div>
+    <div class="r-hstack">
+        <canvas id="FEM_ex" width="550" height="360"></canvas>
+    </div>
 </section>
 <section>
-    <div class ="r-stack SlideTitle ">Exemple : SPH</div>
-<div class="r-fit-text">
-    <ul>
-        <li>Principe : approximation d'une quantité $A$ en une particule $x$ en utilisant une fonction de kernel $W$</li>
-        <li>$A(x) \approx (A\ast W)(x) = \int A(x')W(x-x',h)dv'$</li>
-        <li>$\nabla A(x_i) \approx \sum_{x_j\in N_i} A(x_j)V_j \nabla W(x_i-x_j,h_i) $</li>
-        <li>Plus h est proche de 0 plus l'approximation est précise </li>
-        <li> Exemple : Kugelstadt et al.</li>
-    </ul>
-</div>
-<img class="r-stretch" src="/Images/SPH.png"/>
+    <div class="r-stack SlideTitle ">SPH</div>
+    <div class="r-fit-text">
+        <ul>
+            <li>Approximation d'une quantité $A$ en une particule $x$ en utilisant une fonction noyau $W$</li>
+            <li>$A(x) \approx (A\ast W)(x) = \int A(x')W(x-x',h)dv'$</li>
+            <li>$\nabla A(x_i) \approx \sum_{x_j\in N_i} A(x_j)V_j \nabla W(x_i-x_j,h_i) $</li>
+            <li>Plus h est proche de 0 plus l'approximation est précise </li>
+            <li>Exemple : Kugelstadt et al.</li>
+        </ul>
+    </div>
+    <img class="r-stretch" src="Images/SPH.png" />
 </section>

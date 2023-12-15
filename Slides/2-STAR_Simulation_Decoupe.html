@@ -1,49 +1,49 @@
 <section>
-    <div class ="r-stack SlideTitle ">Simulation : Découpe et Fracture</div>
+    <div class="r-stack SlideTitle ">Simulation : Découpe et Fracture</div>
     <div class="r-fit-text">
         <ul>
-            <li>Dans nos travaux, nous voulons gérer les découpes et fractures :</li>
+            <li>Nous souhaitons intégrer des découpes et fractures :</li>
             <ul>
-                <li>nécessite des modèles topologiques pouvant prendre en compte ces changements topologiques</li>
-                <li>nécessite une gestion hiérarchique ou multirésolution compatible avec ces modèles</li>
+                <li>Besoin de modèles supportant les changements topologiques</li>
+                <li>Besoin d'une gestion hiérarchique compatible avec ces modèles</li>
             </ul>
-            <li>Trois méthodes sont utilisées pour gérer les découpes </li>
+            <li>Trois méthodes sont utilisées pour gérer les découpes</li>
             <ul>
-                <li> Remaillage local des objets et séparation des DoF</li>
-                <li> Octrees spécifiques et surface de découpe implicite</li>
+                <li>Remaillage local des objets et séparation des DoF</li>
+                <li>Octrees spécifiques et surface de découpe implicite</li>
                 <li>Ajout de noeuds virtuels et duplication des DoF</li>
             </ul>
         </ul>
     </div>
-    </section>
-    <section>
-        <div class ="r-stack SlideTitle ">Méthodes basées remaillage</div>
-        <div class="">
-            <ul>
-                <li> Suppression d'éléments </li>
-                <li> Subdivision d'éléments </li>
-                <li> Duplication d'élément </li>
-                <li> Déplacement des sommets </li>
-            </ul>
-        </div>
-        <img class="r-stretch" src="/Images/Remaillage.png"/>
-    </section>
-    <section>
-        <div class ="r-stack SlideTitle ">Méthode basées octree</div>
+</section>
+<section>
+    <div class="r-stack SlideTitle ">Remaillage local</div>
+    <div class="">
         <ul>
-            <li>Adaptation locale de l'octree</li>
-            <li>Suppression des liens entre les cellules lors de la découpe</li>
-            <li>Surface de découpe implicite</li>
-            <li>Exemple : Méthode de Wu et al.</li>
+            <li>Suppression d'éléments</li>
+            <li>Subdivision d'éléments</li>
+            <li>Duplication d'éléments</li>
+            <li>Déplacement des sommets</li>
         </ul>
-        <img class="r-stretch" src="/Images/Wu_octree.png"/>
-    </section>
-    <section>
-        <div class ="r-stack SlideTitle ">Méthodes exploitant des noeuds virtuels</div>
-        <ul>
-            <li>Duplication des cellules lors de la découpe</li>
-            <li>Partage de la matière entre les copies</li>
-            <li>Exemple : Divided voxels </li>
-        </ul>
-        <img class="r-stretch" src="/Images/DividedVoxels.png"/>
-    </section>
+    </div>
+    <img class="r-stretch" src="/Images/Remaillage.png" />
+</section>
+<section>
+    <div class="r-stack SlideTitle ">Octrees</div>
+    <ul>
+        <li>Activation / désactivation de noeuds de l'octree</li>
+        <li>Découpe = suppression des liens entre cellules</li>
+        <li>Surface de découpe implicite</li>
+        <li>Exemple : Méthode de Wu et al.</li>
+    </ul>
+    <img class="r-stretch" src="/Images/Wu_octree.png" />
+</section>
+<section>
+    <div class="r-stack SlideTitle ">Noeuds virtuels</div>
+    <ul>
+        <li>Découep = duplication de cellules</li>
+        <li>Partage de la matière entre les copies</li>
+        <li>Exemple : Divided voxels</li>
+    </ul>
+    <img class="r-stretch" src="/Images/DividedVoxels.png" />
+</section>
