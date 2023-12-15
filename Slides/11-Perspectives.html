@@ -1,9 +1,23 @@
 <div class ="r-stack SlideTitle ">Perspectives</div>
 <div class="r-fit-text">
     <ul>
-        <li>Type de hiérarchie multirésolution</li>
-        <li>Découpe avec snapping des sommets</li>
-        <li>Utiliser d'autres type de modèle physique comme les FEM</li>
+        <li>Nature des maillages et hiérarchie multirésolution</li>
+        <ul>
+            <li>Les vues offres un cadre topologique générale</li>
+            <li>Application à d'autre type de maillage (tétraèdrique,mixte)</li>
+            <li>Utilisé un schéma de raffinement dual pour la génération de la hiérarchie</li>
+        </ul>
+        <li>Gestion des découpes</li>
+        <ul>
+            <li>Actuelle méthode de découpe simple basé sur la séparation d'éléments</li>
+            <li>Mettre en place des méthode basée remaillage</li>
+            <li>Permettre de replacer les sommets sur la surface de séparation</li>
+        </ul>
+        <li>Nature des modèles physique utilisé</li>
+        <ul>
+            <li>Utilisation de modèle plus dépendant de la qualité et du type des élément (FEM)</li>
+            <li>Gestion des contraintes topologique spécifique</li>
+        </ul>
         <li>Implantation GPU des vues multirésolution</li>
     </ul>
 </div>
