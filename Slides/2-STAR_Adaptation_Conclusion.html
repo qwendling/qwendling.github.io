@@ -1,15 +1,50 @@
-<div class="r-stack SlideTitle ">Bilan état de l'art</div>
-<div class="r-fit-text">
-    <ul>
-        <li>La simulation nécessite souvent une topologie complète</li>
-        <li>Il faut un arbitrage entre les détails et les performances</li>
-        <li>La répartition des degrés de liberté doit pouvoir être adaptée</li>
-        <li>Les structures adaptatives doivent supporter les découpes</li>
-        <li>Les approches actuelles ne répondent pas complétement à nos objectifs :</li>
+<section>
+    <div class ="r-stack SlideTitle ">Comparaison mèthodes d'adaptation</div>
+    <table class="r-fit-text">
+        <tr>
+            <th>Méthode</th>
+            <th>Gestion détails géométrique</th>
+            <th>Simplification</th>
+            <th>Topologie complète</th>
+            <th>Découpe</th>
+        </tr>
+        <tr>
+            <td>Remaillage</td>
+            <td>Détails utilisé dans la simulation</td>
+            <td>Non</td>
+            <td>Oui</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>Octree</td>
+            <td>Plongement surface fine</td>
+            <td>Oui</td>
+            <td>Non</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>Maillages imbriqués</td>
+            <td>Maillage le plus fin</td>
+            <td>Oui</td>
+            <td>Non</td>
+            <td>Non</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <div class="r-stack SlideTitle ">Bilan état de l'art</div>
+    <div class="r-fit-text">
         <ul>
-            <li>Adapter en continu les maillages (raffinement + simplification)</li>
-            <li>Fournir des relations d'adjacence complètes</li>
-            <li>Supporter les changements topologiques</li>
+            <li>La simulation nécessite souvent une topologie complète</li>
+            <li>Il faut un arbitrage entre les détails et les performances</li>
+            <li>La répartition des degrés de liberté doit pouvoir être adaptée</li>
+            <li>Les structures adaptatives doivent supporter les découpes</li>
+            <li>Les approches actuelles ne répondent pas complétement à nos objectifs :</li>
+            <ul>
+                <li>Adapter en continu les maillages (raffinement + simplification)</li>
+                <li>Fournir des relations d'adjacence complètes</li>
+                <li>Supporter les changements topologiques</li>
+            </ul>
         </ul>
-    </ul>
-</div>
+    </div>
+</section>
