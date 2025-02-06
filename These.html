@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>These Quentin WENDLING</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/solarized.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+	<div id="app" class="reveal">
+		<div class="slides">
+			<section>
+				<div class="grid">
+					<div class="boxTitle">Couplage géométrie/mécanique pour l'animation d'objets détaillés</div>
+					<div class="delim_hr"></div>
+					<div class="boxSubTitle">Quentin WENDLING</div>
+					<img src="Images/Igg.png" class="footer img_foot_1" />
+					<img src="Images/icube.png" class="footer img_foot_2" />
+					<img src="Images/cnrs.svg" class="footer img_foot_3" />
+				</div>
+			</section>
+			<section>
+				<Slide_contexte />
+			</section>
+			<!--<section>
+				<div class="grid">
+					<div class="boxTitle">Etat de l'art</div>
+				</div>
+			</section>-->
+			<section>
+				<Slide_simulation_principe />
+			</section>
+			<section>
+				<Slide_topologie_monoresolution />
+			</section>
+			<section>
+				<Slide_simulation_continue />
+			</section>
+			<!--<section>
+					<Slide_simulation_discret />
+				</section>-->
+			<section>
+				<Slide_simulation_xpbd />
+			</section>
+			<section>
+				<Slide_simulation_conclusion />
+			</section>
+			<section>
+				<Slide_simulation_adaptative />
+			</section>
+			<section>
+				<Slide_simulation_decoupe />
+			</section>
+			<section>
+				<Slide_adaptation_conclusion />
+			</section>
+
+			<section>
+				<div class="r-stack SlideTitle ">Contributions : Framework d'animation adaptative</div>
+				<video data-autoplay class="r-stack" controls>
+					<source src="Videos/Framework_intro.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+			</section>
+			<section>
+				<Slide_framework_presentation />
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Vues multirésolution : un modèle topologique multirésolution adaptatif
+				</div>
+				<img class="r-stretch" src="Images/Vues_teaser.png" />
+			</section>
+
+			<!--<section>
+					<Slide_topologie_cmap />
+				</section>-->
+			<section>
+				<Slide_topologie_multiresolution />
+			</section>
+			<section>
+				<Slide_topologie_mr_cmap />
+			</section>
+			<!--<section>
+					<Slide_topologie_mr_representation />
+				</section>-->
+			<section>
+				<Slide_vues_principe />
+			</section>
+			<section>
+				<Slide_vues_exemples />
+			</section>
+			<section>
+				<Slide_vues_relation />
+			</section>
+			<section>
+				<Slide_vues_hierarchie />
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Applications</div>
+				<div class="r-stack r-fit-text">
+					<ul>
+						<li>Optimisation de la propagation des déformations dans la hiérarchie</li>
+						<li>Critère d'adaptation</li>
+						<li>Adaptation des modèles mécaniques</li>
+						<li>Gestion des découpes</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<Slide_propagation />
+			</section>
+
+			<section>
+				<Slide_critere_adaptation />
+			</section>
+			<section>
+				<Slide_adaptation_mecanique />
+			</section>
+			<section>
+				<Slide_decoupe />
+			</section>
+			<section>
+				<Slide_vues_resultat />
+			</section>
+			<section>
+				<Slide_conclusion />
+			</section>
+			<section>
+				<Slide_perspectives />
+			</section>
+			<section>
+				<div class="grid">
+					<div class="boxTitle">Merci pour votre attention</div>
+				</div>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		const { createApp, ref } = Vue
+
+
+		const app = createApp({
+			setup() {
+				const message = ref('Hello vue!')
+				return {
+					message
+				}
+			}
+		});
+		const xhttp = new XMLHttpRequest();
+	</script>
+	<script src="Slides/1-Contexte.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Principe.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Continue.js">
+	</script>
+	<script type="module" src="Slides/2-STAR_Simulation_Continue_Display.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Discret.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_XPBD.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Adaptative.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Decoupe.js">
+	</script>
+	<script src="Slides/2-STAR_Simulation_Conclusion.js">
+	</script>
+	<script src="Slides/2-STAR_Adaptation_Conclusion.js">
+	</script>
+	<script src="Slides/3-STAR_Topologie_monoresolution.js">
+	</script>
+	<script src="Slides/3-STAR_Topologie_CMap.js">
+	</script>
+	<script src="Slides/3-STAR_Topologie_Multiresolution.js">
+	</script>
+	<script src="Slides/3-STAR_Topologie_MR_CMap.js">
+	</script>
+	<script src="Slides/3-STAR_Topologie_MR_representation.js">
+	</script>
+	<script src="Slides/4-Framework_Presentation.js">
+	</script>
+	<script src="Slides/5-Vues_Principe.js">
+	</script>
+	<script src="Slides/5-Vues_Relation.js">
+	</script>
+	<script src="Slides/5-Vues_Hierarchie.js">
+	</script>
+	<script src="Slides/5-Vues_Resultat.js">
+	</script>
+	<script src="Slides/5-5-Vues_Exemples.js">
+	</script>
+	<script src="Slides/6-Propagation_multiresolution.js">
+	</script>
+	<script src="Slides/7-Adaptation_Model.js">
+	</script>
+	<script src="Slides/8-Critere_Adaptation.js">
+	</script>
+	<script src="Slides/9-Decoupe.js">
+	</script>
+	<script src="Slides/10-Conclusion.js">
+	</script>
+	<script src="Slides/11-Perspectives.js">
+	</script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		app.mount("#app");
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: 'c',
+			center: false,
+			navigationMode: "linear",
+
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+		});
+		Reveal.on('slidechanged', event => {
+			if (event.currentSlide.id === 'Slide_CMap') {
+				document.getElementById("video_CMap").play();
+			}
+			if (event.previousSlide.id === 'Slide_CMap') {
+				document.getElementById("video_CMap").pause();
+			}
+		});
+	</script>
+	<script type="module">
+		import { slide_fem } from "./Slides/2-STAR_Simulation_Continue_Display.js";
+		import { slide_multires } from "./Slides/3-STAR_Topologie_Multiresolution_Display.js";
+		//import {slide_vues} from "./Slides/5-5-Vues_Exemples_Display.js";
+
+		slide_fem.init(document.getElementById("FEM_ex"));
+		slide_fem.open();
+
+		slide_multires.init(document.getElementById("MR_0"), document.getElementById("MR_1"), document.getElementById("MR_2"), document.getElementById("MR_3"));
+		slide_multires.open();
+
+		/*slide_vues.init(document.getElementById("Vue_meca"),document.getElementById("Vue_geom"),document.getElementById("Vue_collision"));
+		slide_vues.open();*/
+	</script>
+</body>
+
+</html>
