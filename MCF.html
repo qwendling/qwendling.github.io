@@ -32,26 +32,34 @@
 			</section>
 			<section>
 				<div class="TitleSlide">
-					Deformation géométrique
+					Déformation géométrique
 				</div>
 				<div class="full_slide">
 					<ul>
-						<li>Déf</li>
+						<li>Définie comme la transformation permettant de faire passer un objet d'un plongement à un autre</li>
 					</ul>
 					
 				</div>
-				<img class=" r-stretch" src="Images/deform_toy.png" />
+				<img  src="Images/deform_toy.png" />
 			</section>
 			<section>
-				<div class="TitleSlide">
-					Utilisation des déformations
+				<div class="r-stack SlideTitle ">Utilisation des déformations</div>
+
+				<div class="r-hstack">
+					<div class="r-stack" style="width:40% ;padding-left: 10px;">
+						<img  width="100%" src="Images/Vues_teaser_min.png" />
+					</div>
+					<div class="r-stack" style="width:50% ;padding-left: 10px;">
+						<img width="100%" src="Images/Turtle.png" />
+					</div>
 				</div>
-				<div class="full_slide">
-					<ul>
-						<li>Minimisation temporel -> simulation</li>
-						<li>Correction lors de la synthèse de texture </li>
-						<li>Deux images teaser</li>
-					</ul>
+				<div class="r-hstack">
+					<div class="r-stack" style="width:50% ;padding-left: 10px;">
+						Simulation
+					</div>
+					<div class="r-stack" style="width:50% ;padding-left: 10px;">
+						Correction lors de la synthèse de texture
+					</div>
 				</div>
 			</section>
 
@@ -61,7 +69,28 @@
 				</div>
 			</section>
 			<section>
-				<Slide_contexte />
+				<div class="TitleSlide">
+					Contexte
+				</div>
+				<div class="r-fit-text">
+					<ul>
+						<li>Applications en informatique graphique :
+							<ul>
+								<li>Réalité virtuelle, augmentée ou mixte</li>
+								<li>Jeux Vidéo, Applications Médicales, Simulations interactives </li>
+							</ul>
+						</li>
+						<li>Contraintes et problèmatiques spécifiques :
+							<ul>
+								<li>Rendu réaliste : gestion d'objets complexes et détaillés</li>
+								<li>Performance temps réel ou interactive : optimisation et modèles spécifiques</li>
+								<li>Changements topologiques : structures et algorithmes dédiés</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<img class="r-stretch" src="Images/computer_graphics_simu.png" />
+				<span class="caption">Diziol, Raphael, Jan Bender, and Daniel Bayer. "Robust real-time deformation of incompressible surface meshes." 2011</span>
 			</section>
 			<!--<section>
 				<div class="grid">
@@ -150,6 +179,26 @@
 			<section>
 				<Slide_topologie_multiresolution />
 			</section>
+			<section id="Slide_CMap">
+				<div class="r-stack SlideTitle ">Cartes combinatoires</div>
+				<div class="r-fit-text">
+					<ul>
+						<li>Pouvoir parcourir les différentes cellules (sommets,arêtes,faces,volumes) de l'objet</li>
+						<li>Pouvoir parcourir le voisinnage de chaque cellule de manière efficace</li>
+						<li>Nous utilisons les cartes combinatoires dans nos travaux</li>
+						<ul>
+							<li>Une entité de base : les brins</li>
+							<li>n relations entre les brins $\phi_1,\phi_2,\phi_3,...,\phi_n$</li>
+							<li>Contraintes sur ces relations</li>
+						</ul>
+					</ul>
+			
+				</div>
+				<video id="video_CMap" class="r-stack r-stretch" controls loop autoplay>
+					<source src="Videos/CMap.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</section>
 			<section>
 				<Slide_topologie_mr_cmap />
 			</section>
@@ -162,19 +211,18 @@
 			<section>
 				<Slide_vues_exemples />
 			</section>
-			<section>
+			<!-- <section>
 				<Slide_vues_relation />
 			</section>
 			<section>
 				<Slide_vues_hierarchie />
-			</section>
+			</section> -->
 			<section>
 				<div class="r-stack SlideTitle ">Applications</div>
 				<div class="r-stack r-fit-text">
 					<ul>
 						<li>Optimisation de la propagation des déformations dans la hiérarchie</li>
 						<li>Critère d'adaptation</li>
-						<li>Adaptation des modèles mécaniques</li>
 						<li>Gestion des découpes</li>
 					</ul>
 				</div>
@@ -186,17 +234,45 @@
 			<section>
 				<Slide_critere_adaptation />
 			</section>
-			<section>
+			<!-- <section>
 				<Slide_adaptation_mecanique />
-			</section>
+			</section> -->
 			<section>
 				<Slide_decoupe />
 			</section>
 			<section>
-				<Slide_vues_resultat />
+				<div class="r-stack SlideTitle ">Vues : Performances</div>
+
+				<div class="r-hstack" style="vertical-align: center;">
+					<div class="r-stack" style="height: 100%;width:50% ;padding-left: 10px;">
+						<img  width="100%" src="Images/bench_deform2.png" />
+					</div>
+					<div class="r-stack" style="height: 10%;width:50% ;padding-left: 10px;">
+						<img width="100%" src="Images/bench_contact.png" />
+					</div>
+				</div>
 			</section>
 			<section>
-				<Slide_conclusion />
+				<div class ="r-stack SlideTitle ">Conclusion</div>
+				<div class="r-fit-text">
+				  <ul>
+					<li>Définition d'un framework pour l'animation d'objets détaillés :</li>
+					<ul>
+						<li>Basé sur les cartes combinatoires multirésolutions</li>
+						<ul>
+							<li>Accès à tous types de cellules pour les calculs</li>
+							<li>Parcours et adaptations topologiques optimisés</li>
+						</ul>
+						<li>Exploite la notion de vue pour parcourir de manière adaptative les niveaux de résolution</li>
+						<ul>
+							<li>Borne le nombre de noeuds présents dans la simulation physique</li>
+							<li>Optimise la propagation et la mise à jour de la géométrie</li>
+							<li>Supporte différents niveaux de simulation \\ (pour l'estimation des erreurs)</li>
+						</ul>
+						<li>Proposition d'un algorithme de découpe multirésolution</li>
+					</ul>
+				  </ul>
+				</div>
 			</section>
 			<section>
 				<Slide_perspectives />
