@@ -14,8 +14,7 @@ h1 {
   display: inline-block;
   grid-column-start: 2;
   grid-column-end: 10;
-  grid-row-start: 5;
-  grid-row-end: 5;
+  grid-row-start: 4;
 }
 
 .full_slide {
@@ -60,6 +59,7 @@ h1 {
   align-self: start;
   text-align: left;
   font-weight: bold;
+  background-color: #c7c2b4;
 }
 
 .TitleSlide {
@@ -71,13 +71,13 @@ h1 {
   align-self: start;
   text-align: left;
   font-weight: bold;
+  background-color: #c7c2b4;
 }
 
 .boxTitle {
   grid-column-start: 1;
   grid-column-end: 11;
   grid-row-start: 3;
-  grid-row-end: 5;
   font-size: 60px;
   align-self: center;
   font-weight: bold;
@@ -85,34 +85,33 @@ h1 {
 .boxSubTitle {
   grid-column-start: 4;
   grid-column-end: 8;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-row-start: 4;
   align-self: center;
 }
 
 .footer {
-  grid-row-start: 6;
-  grid-row-end: 8;
+  grid-row-start: 5;
+  grid-row-end: 7;
 }
 .img_foot_1 {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
   align-self: center;
-  width: 80%;
+  width: 70%;
 }
 
 .img_foot_2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  align-self: center;
+
+  width: 70%;
+}
+
+.img_foot_3 {
   grid-column-start: 5;
   grid-column-end: 7;
   align-self: center;
 
-  width: 80%;
-}
-
-.img_foot_3 {
-  grid-column-start: 8;
-  grid-column-end: 10;
-  align-self: center;
-
-  width: 80%;
+  width: 70%;
 }

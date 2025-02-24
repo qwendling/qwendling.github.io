@@ -35,12 +35,19 @@
 					Déformation géométrique
 				</div>
 				<div class="full_slide">
-					<ul>
-						<li>Définie comme la transformation permettant de faire passer un objet d'un plongement à un autre</li>
-					</ul>
+					
+					<div class="r-stack">
+							<ul>
+								<li>Permet de passer d'un plongement à un autre</li>
+								<li>Définie comme la gradient la fonction de déplacement : \[\begin{aligned} \phi (\bar{x}) &amp; = F*\bar{x} + p  \end{aligned} \]</li>
+							</ul>
+
+					</div>
+				
+							<img width= "65%" src="Images/DeformOri.png" />
+	
 					
 				</div>
-				<img  src="Images/deform_toy.png" />
 			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Utilisation des déformations</div>
@@ -97,8 +104,22 @@
 					<div class="boxTitle">Etat de l'art</div>
 				</div>
 			</section>-->
+
+			
 			<section>
 				<Slide_simulation_principe />
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Maillages</div>
+				<div class="r-fit-text">
+					<ul>
+						<li>L'informatique est intrinsèquement un outil discret</li>
+						<li>Objets définis par une décomposition cellulaire (sommets,arêtes,faces,volumes)</li>
+						<li>Pour la simulation utilisation de maillages volumiques</li>
+					</ul>
+			
+				</div>
+				<img class="r-stretch" src="Images/decomposition_cellulaire.png" />
 			</section>
 			<section>
 				<div class="TitleSlide">
@@ -277,6 +298,78 @@
 			<section>
 				<Slide_perspectives />
 			</section>
+
+			<section>
+				<div class="r-stack SlideTitle ">Partie 2 : Correction des distorsions lors de la synthèse de texture</div>
+				<img class="r-stretch" src="Images/Pipeline4.png" />
+			</section>
+
+			<section>
+				<div class="r-stack SlideTitle ">Contexte: Création d'asset 3D</div>
+				<div class="r-stack">
+					<ul>
+						<li>Modélisation de la surface 3D</li>
+						<li>Plongement de la surface d'ans l'espace UV</li>
+						<li>Création des textures</li>
+						<li>Plaquage de la texture sur la surface géométrique</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Synthèse de texture par l'exemple</div>
+				<div class="r-stack">
+					<ul>
+						<li>Générer une texture infinie à partir d'un petit exemple</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Pavage et mélange</div>
+				<div class="r-stack">
+					<ul>
+						<li>Paver l'espace UV avec k pavages</li>
+						<li>Chercher le contenue de chaque tuile dans un exemple E</li>
+						<li>Mélanger le contenue des tuiles </li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Problème : Distorsions induites par la paramétrisation
+				</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Objectif</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Contribution : Pavage et mélange déformé</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Champs de déformation dans le pavage et mélange</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Exemple</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Contrôle des distorsions par triangle</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Contrôle de l'orientation</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Lissage</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Continuité à travers les coutures</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Résultat</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Limitation et perspective</div>
+			</section>
+			<section>
+				<div class="r-stack SlideTitle ">Conclusion</div>
+			</section>
 			<section>
 				<div class="grid">
 					<div class="boxTitle">Merci pour votre attention</div>
@@ -369,6 +462,8 @@
 			slideNumber: 'c',
 			center: false,
 			navigationMode: "linear",
+			width:1920,
+			height:1080,
 
 
 			// Learn about plugins: https://revealjs.com/plugins/
