@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/solarized.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -28,6 +29,7 @@
 					<img src="Images/Igg.png" class="footer img_foot_1" />
 					<img src="Images/icube.png" class="footer img_foot_2" />
 					<img src="Images/cnrs.svg" class="footer img_foot_3" />
+					<img src="Images/unistra.png" class="footer img_foot_4" />
 				</div>
 			</section>
 			<section>
@@ -71,10 +73,12 @@
 			</section>
 
 			<section>
-				<div class="TitleSlide">
-					Partie 1 : Simulation physique adaptative
+				<div class="grid">
+					<div class="boxTitlePart1">Partie 1 : Simulation physique adaptative</div>
+					<div class="delim_hrPart1"></div>
 				</div>
 			</section>
+
 			<section>
 				<div class="TitleSlide">
 					Contexte
@@ -123,12 +127,24 @@
 			</section>
 			<section>
 				<div class="TitleSlide">
-					Exemple 1 : FEM
+					Exemples
 				</div>
-			</section>
-			<section>
-				<div class="TitleSlide">
-					Exemple 2 : Physically based Shape Matching
+				<div class="row">
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Méthode des éléments finis</div>
+						<ul>
+							<li>Grandes variation dans le champs de déformation</li>
+							<li>Changement important de l'oriantation  à proximité des coutures</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Méthodes basée position</div>
+						<ul>
+							<li>Lissage adaptatif</li>
+							<li>Calcul du champs de déformation directement dans le shader</li>
+							<li>Autres application du champs de déformation</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 			<!-- <section>
@@ -147,8 +163,22 @@
 				<Slide_simulation_conclusion />
 			</section>
 			<section>
-				<div class="TitleSlide">
-					Simulation Adaptative
+				<div class="r-stack SlideTitle ">Méthodes adaptatives</div>
+				<div class="r-fit-text">
+			
+					<ul>
+						<li>La plupart des méthodes visent à :</li>
+						<ul>
+							<li>Conserver les détails géométriques et la qualité du rendu</li>
+							<li>Garantir les performances des calculs</li>
+						</ul>
+						<li>Elles utilisent différentes représentations d'un objet :</li>
+						<ul>
+							<li>Séparation des modèles géométriques et physiques</li>
+							<li>Réduction ou adaptation du nombre de degrés de liberté</li>
+							<li>=> Nécessite de synchroniser / coupler ces représentations</li>
+						</ul>
+					</ul>
 				</div>
 			</section>
 			<section>
@@ -158,8 +188,21 @@
 			</section>
 
 			<section>
-				<div class="TitleSlide">
-					Découpe
+				<div class="r-stack SlideTitle ">Découpe et Fracture</div>
+				<div class="r-fit-text">
+					<ul>
+						<li>Nous souhaitons intégrer des découpes et fractures :</li>
+						<ul>
+							<li>Besoin de modèles supportant les changements topologiques</li>
+							<li>Besoin d'une gestion hiérarchique compatible avec ces modèles</li>
+						</ul>
+						<li>Trois méthodes sont utilisées pour gérer les découpes</li>
+						<ul>
+							<li>Remaillage local des objets et séparation des DoF</li>
+							<li>Octrees spécifiques et surface de découpe implicite</li>
+							<li>Ajout de noeuds virtuels et duplication des DoF</li>
+						</ul>
+					</ul>
 				</div>
 			</section>
 			<section>
@@ -300,72 +343,328 @@
 			</section>
 
 			<section>
-				<div class="r-stack SlideTitle ">Partie 2 : Correction des distorsions lors de la synthèse de texture</div>
-				<img class="r-stretch" src="Images/Pipeline4.png" />
+				<div class="grid">
+					<div class="boxTitlePart2">Partie 2 : Correction des distorsions lors de la synthèse de texture</div>
+					<div class="delim_hrPart2"></div>
+				</div>
 			</section>
 
+			
 			<section>
-				<div class="r-stack SlideTitle ">Contexte: Création d'asset 3D</div>
-				<div class="r-stack">
-					<ul>
-						<li>Modélisation de la surface 3D</li>
-						<li>Plongement de la surface d'ans l'espace UV</li>
-						<li>Création des textures</li>
-						<li>Plaquage de la texture sur la surface géométrique</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<div class="r-stack SlideTitle ">Synthèse de texture par l'exemple</div>
-				<div class="r-stack">
-					<ul>
-						<li>Générer une texture infinie à partir d'un petit exemple</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<div class="r-stack SlideTitle ">Pavage et mélange</div>
-				<div class="r-stack">
-					<ul>
-						<li>Paver l'espace UV avec k pavages</li>
-						<li>Chercher le contenue de chaque tuile dans un exemple E</li>
-						<li>Mélanger le contenue des tuiles </li>
-					</ul>
-				</div>
+				<section>
+					<div class="r-stack SlideTitle ">Contexte: Création d'asset 3D</div>
+					<div class="row default_text_size">
+						<ul>
+							<li>Modélisation de la surface 3D</li>
+							<li>Plongement de la surface d'ans l'espace UV</li>
+							<li>Création des textures</li>
+							<li>Plaquage de la texture sur la surface géométrique</li>
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8"><img  src="Images/Texture_Hdr_Basile.png" /></div>
+						
+					</div>
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Synthèse de texture par l'exemple</div>
+					<div class="row default_text_size">
+						<ul>
+							<li>Générer une texture infinie à partir d'un petit exemple</li>
+						</ul>
+					</div>
+					<img class="r-stretch" src="Images/LRPN.png" />
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Pavage et mélange</div>
+					<div class="row default_text_size">
+						<ul>
+							<li>Paver l'espace UV avec k pavages</li>
+							<li>Chercher le contenue de chaque tuile dans un exemple E</li>
+							<li>Mélanger le contenue des tuiles </li>
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8"><img  src="Images/TnB.png" /></div>
+						
+					</div>
+				</section>
 			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Problème : Distorsions induites par la paramétrisation
 				</div>
+				<div class="">
+					<div class="row  ">
+
+						<div class="col-md-5 my-auto default_text_size" >
+							<div>La paramètrisation induit :</div>
+							<ul>
+								<li>Distorsions d'aire</li>
+								<li>Distortion d'angle</li>
+								<li>Découpe visible</li>
+							</ul>
+						</div>
+						<div class="col-md-7">
+							<img src="Images/bunny_blender.png" />
+						</div>
+					</div>
+				</div>
 			</section>
 			<section>
-				<div class="r-stack SlideTitle ">Objectif</div>
+				<div class=" SlideTitle ">Objectifs et contributions</div>
+				<div class=" SlideSubTitle ">Objectifs :</div>
+				<div class="default_text_size">
+					<ul >
+						<li>Fournir un controle artistique sur le pavage et mélange</li>
+						<li>Compenser les distorsions causé par la paramétrisation</li>
+						<li>Réduire la visibilité des découpes</li>
+					</ul>
+				</div>
+				
+				<div class=" SlideSubTitle ">Contributions :</div>
+				<div class="default_text_size">
+					<ul class="default_text_size">
+						<li>Introduction d'un champs de déformation dans le Pavage et Mélange</li>
+						<li>Définition du champ de déformation pour la correction des distorsions</li>
+						<li>Gestion de la cohérence de la texture à travers les découpes</li>
+					</ul>
+				</div>
+				
 			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Contribution : Pavage et mélange déformé</div>
+				<img class="r-stretch" src="Images/Pipeline4.png" />
 			</section>
 			<section>
-				<div class="r-stack SlideTitle ">Champs de déformation dans le pavage et mélange</div>
+				<section>
+					<div class="r-stack SlideTitle ">Champs de déformation dans le pavage et mélange</div>
+					<div class="row default_text_size center_text" style="margin-top: 2em;">
+						<div class="col-md-7">
+							On introduit un champs de déformation $\mathcal{F}(\bf{u})$ dans le pavage et mélange ainsi :
+							\[\begin{aligned} E_i(\bf{u}) &amp; = E(\bf{u}+\bf{h}_i(\bf{u}))  \end{aligned} \]
+							Deviens
+							\[\begin{aligned} E_{i} \left( \bf{u} \right) = E \left( \mathcal{F} \left( \bf{u} \right) * \left( \bf{u} - \bf{c}_{i} \left( \bf{u} \right) \right) + \bf{h}_{i} \left( \bf{u} \right) \right)  \end{aligned} \]
+						</div>
+						<div class="col-md-5">
+							<img src="Images/deformTile.png" />
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Exemple</div>
+					<div class="row" >
+						<div class="col-md-4 default_text_size">
+							$\mathcal{F}$ = étirement isotrope
+						</div>
+						<div class="col-md-8">
+								<img  src="Images/scale_X_crop.png" />
+							
+						</div>
+					</div>
+					<div class="row" >
+						<div class="col-md-4 default_text_size">
+							$\mathcal{F}$ = cisaillement
+						</div>
+						<div class="col-md-8">
+								<img  src="Images/shear_crop.png" />
+							
+						</div>
+					</div>
+					<div class="row" >
+						<div class="col-md-4 default_text_size">
+							$\mathcal{F}$ = rotation
+						</div>
+						<div class="col-md-8">
+								<img  src="Images/rot_crop.png" />
+							
+						</div>
+					</div>
+				</section>
 			</section>
 			<section>
-				<div class="r-stack SlideTitle ">Exemple</div>
+				<section>
+					<div class="r-stack SlideTitle ">Contrôle des distorsions par triangle</div>
+					<div class="row">
+						<ol>
+							<li>Calcul du gradient de déformation $F$ par triangle</li>
+							<li>Sépartaion de la composante rigide $\mathcal{R}$ de la transformation</li>
+							\[  F = RS = \left( U V^{T} \right) \left( V \Sigma V^{T} \right)  \]
+							<li>On défini le champ de déformation $\mathcal{F}$ à partir de $S$ </li>
+						</ol>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_default.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u}) = Id $
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_s.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u}) = \mathcal{S}(\bf{u})$
+							</div>
+						</div>
+					</div>
+					
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Contrôle de l'orientation</div>
+					<div class="row">
+						<ol>
+							<li>Définition d'un champs de vecteur tangent à la surface $\bf{o}$</li>
+							<li>Calcul de l'angle $\theta$ entre $\bf{o}$ et les ligne iso-paramétrique</li>
+							\[  \theta(\bf{u}) = angle \left( R^{-1} ( \bf{u} ) * \bf{o} ( \bf{u} ), (1, 0, 0)^{T} \right)  \]
+							<li>On ajoute le champ de rotation $\mathcal{R}(\theta(\bf{u}))$ à $\mathcal{F}$</li>
+						</ol>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_s.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u}) = \mathcal{S}(\bf{u})$
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_rs.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u})=\mathcal{R}(\theta(\bf{u}))\mathcal{S}(\bf{u})$
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Lissage</div>
+					<div class="row">
+						<ol>
+							<li>Introduction d'un opérateur de lissage $\mathcal{L}$</li>
+							<li>Lissage du champ de déformation</li>
+							\[  \mathcal{F}(\bf{u}) = \mathcal{R}\left( \mathcal{L}(\theta(\bf{u}))\right)\ *\ \mathcal{L} \left( \mathcal{S}(\bf{u}) \right) \]
+						</ol>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_rs.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u})=\mathcal{R}(\theta(\bf{u}))\mathcal{S}(\bf{u})$
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<img  src="Images/deformation_rs_smooth.png" />
+							</div>
+							<div class="row">
+								$\mathcal{F}(\bf{u}) = \mathcal{R}\left( \mathcal{L}(\theta(\bf{u}))\right)\ *\ \mathcal{L} \left( \mathcal{S}(\bf{u}) \right)$
+							</div>
+						</div>
+					</div>
+				</section>
 			</section>
 			<section>
-				<div class="r-stack SlideTitle ">Contrôle des distorsions par triangle</div>
+				<section>
+					<div class="r-stack SlideTitle ">Continuité à travers les coutures</div>
+					<div class="row">
+						Besoin d'utiliser la meme cellule de chaque coté de la couture
+						<ol>
+							<li>Définition d'une bandes le long de la couture</li>
+							<li>Séparation de cette bande en un ensemble de cellules de gauche et de droite</li>
+						</ol>
+					</div>
+					<div class="row">
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-5">
+								<img  src="Images/bunny_seams_2D_with_uvs.png" />
+						</div>
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-4">
+								<img  src="Images/bunny_seams_3D.png" />
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Continuité à travers les coutures</div>
+					<div class="row">
+						Besoin d'utiliser la meme cellule de chaque coté de la couture
+						<ol>
+							<li>Définition d'une bandes le long de la couture</li>
+							<li>Séparation de cette bande en un ensemble de cellules de gauche et de droite</li>
+							<li>Prise en compte lors de la définition des tuiles :</li>
+						</ol>
+						\[ E_{i}( \bf{u} ) = E \left( \mathcal{F} ( \bf{u} ) * (\bf{u} - \bf{b}_l( \bf{u} ) ) + \bf{h}_l ( \bf{u} ) \right) \]
+						<ul>
+							<li>Meme hash $\bf{h}_l$ de chaque coté de la découpe</li>
+							<li>Meme centre $\bf{b}_l$ de tuile en 3D</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section>
-				<div class="r-stack SlideTitle ">Contrôle de l'orientation</div>
+				<section> 
+					<div class="r-stack SlideTitle ">Résultat</div>
+					<div class="row">
+						<div class="col-md-4"><img  src="Images/ori_directions.png" /></div>
+						<div class="col-md-4"><img  src="Images/ori_rendering.png" /></div>
+						<div class="col-md-3">
+							<div class="row"><img height="400px"   src="Images/ori_zoom_01.png" /></div>
+							<div class="row"><img height="400px" src="Images/ori_zoom_02.png" /></div>
+						</div>
+					</div>
+				</section>
+				<section> 
+					<div class="r-stack SlideTitle ">Résultat</div>
+					<div class="row">
+						<div class="col-md-4"><img height="400px" src="Images/uv_sphere_uv_01_det_s_trimmed.png" /></div>
+						<div class="col-md-4"><img height="400px" src="Images/uv_sphere_uv_01_ctnb_anisotropy_trimmed.png" /></div>
+						<div class="col-md-4">
+							<img  height="400px" src="Images/uv_sphere_uv_01_dtnb_anisotropy_trimmed.png" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4"><img height="400px" src="Images/uv_sphere_uv_02_det_s_trimmed.png" /></div>
+						<div class="col-md-4"><img height="400px" src="Images/uv_sphere_uv_02_ctnb_anisotropy_trimmed.png" /></div>
+						<div class="col-md-4">
+							<img height="400px" src="Images/uv_sphere_uv_02_dtnb_anisotropy_trimmed.png" />
+						</div>
+					</div>
+				</section>
 			</section>
+			
 			<section>
-				<div class="r-stack SlideTitle ">Lissage</div>
-			</section>
-			<section>
-				<div class="r-stack SlideTitle ">Continuité à travers les coutures</div>
-			</section>
-			<section>
-				<div class="r-stack SlideTitle ">Résultat</div>
-			</section>
-			<section>
-				<div class="r-stack SlideTitle ">Limitation et perspective</div>
+				<div class="r-stack SlideTitle ">Limitations et perspectives</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Limitations :</div>
+						<ul>
+							<li>Grandes variation dans le champs de déformation</li>
+							<li>Changement important de l'oriantation  à proximité des coutures</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Perspectives :</div>
+						<ul>
+							<li>Lissage adaptatif</li>
+							<li>Calcul du champs de déformation directement dans le shader</li>
+							<li>Autres application du champs de déformation</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<img height="400px" src="Images/limitation.png" />
+				</div>
 			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Conclusion</div>
