@@ -193,17 +193,18 @@
 					Simulation Adaptative : Exemple
 				</div>
 				<div class="row">
+					<div class="col-md-3"></div>
 					<div class="col-md-6">
 						<div class="row">Remaillage</div>
 						<div class="row"><img src="Images/Fléchon.png" /></div>
 						<div class="row caption">Fléchon, E., Zara, F., Damiand, G., & Jaillet, F. A unified topological-physical model for adaptive refinement. 2014</div>
 					</div>
-					<div class="col-md-1"></div>
-					<div class="col-md-4">
+					
+					<!-- <div class="col-md-4">
 						<div class="row">Octree</div>
 						<div class="row"><img src="Images/steinmann.png" /></div>
 						<div class="row caption">Steinemann, Denis, Miguel A. Otaduy, and Markus Gross. "Fast adaptive shape matching deformations." 2008</div>
-					</div>
+					</div> -->
 					<div class="col-md-12">
 						<div class="row">Maillages imbriqués</div>
 						<div class="row"><img src="Images/Otaduy.png" /></div>
@@ -221,16 +222,21 @@
 							<li>Besoin de modèles supportant les changements topologiques</li>
 							<li>Besoin d'une gestion hiérarchique compatible avec ces modèles</li>
 						</ul>
-						<li>Trois méthodes sont utilisées pour gérer les découpes</li>
-						<ul>
-							<li>Remaillage local des objets et séparation des DoF</li>
-							<li>Octrees spécifiques et surface de découpe implicite</li>
-							<li>Ajout de noeuds virtuels et duplication des DoF</li>
-						</ul>
 					</ul>
 				</div>
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-6">
+						<div class="row"><img src="Images/Remaillage.png" /></div>
+						<div class="row caption">Wu, J., Westermann, R., & Dick, C. A survey of physically based simulation of cuts in deformable bodies. 2015</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row"><img src="Images/Wu_octree.png" /></div>
+						<div class="row caption">Wu, J., Westermann, R., & Dick, C. Real-time haptic cutting of high-resolution soft tissues.2014</div>
+					</div>
+				</div>
 			</section>
-			<section>
+			<!-- <section>
 				<div class="TitleSlide">
 					Découpes: Exemple
 				</div>
@@ -251,7 +257,7 @@
 						<div class="row caption">Qi, D., Milef, N., & De, S. (2021). Divided Voxels: an efficient algorithm for interactive cutting of deformable objects. 2021</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<!-- <section>
 				<Slide_simulation_adaptative />
 			</section> -->
@@ -259,7 +265,21 @@
 				<Slide_simulation_decoupe />
 			</section> -->
 			<section>
-				<Slide_adaptation_conclusion />
+				<div class="r-stack SlideTitle ">Bilan état de l'art</div>
+				<div class="r-fit-text">
+					<ul>
+						<li>La simulation nécessite souvent une topologie complète</li>
+						<li>Il faut un arbitrage entre les détails et les performances</li>
+						<li>La répartition des degrés de liberté doit pouvoir être adaptée</li>
+						<li>Les structures adaptatives doivent supporter les découpes</li>
+						<li>Les approches actuelles ne répondent pas complétement à nos objectifs :</li>
+						<ul>
+							<li>Adapter en continu les maillages (raffinement + simplification)</li>
+							<li>Fournir des relations d'adjacence complètes</li>
+							<li>Supporter les changements topologiques</li>
+						</ul>
+					</ul>
+				</div>
 			</section>
 
 			<section>
@@ -319,10 +339,10 @@
 			</section>
 			<!-- <section>
 				<Slide_vues_relation />
-			</section>
+			</section>-->
 			<section>
 				<Slide_vues_hierarchie />
-			</section> -->
+			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Applications</div>
 				<div class="r-stack r-fit-text">
@@ -683,6 +703,13 @@
 						</div>
 					</div>
 				</section>
+				<section>
+					<div class="r-stack SlideTitle ">Résultat</div>
+					<video class="r-stack" controls data-autoplay loop>
+						<source src="Videos/dTnB_rendering.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
 			</section>
 			
 			<section>
@@ -710,6 +737,28 @@
 			</section>
 			<section>
 				<div class="r-stack SlideTitle ">Conclusion</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Vues multirésolutions</div>
+						<ul>
+							<li>Définition d'un framework pour l'animation d'objets détaillés :</li>
+							<ul>
+								<li>Basé sur les cartes combinatoires multirésolutions</li>
+								<li>Exploite la notion de vue pour parcourir de manière adaptative les niveaux de résolution</li>
+								<li>Proposition d'un algorithme de découpe multirésolution</li>
+							</ul>
+						  </ul>
+					</div>
+					<div class="col-md-6">
+						<div class=" SlideSubTitle ">Pavage et mélange déformé</div>
+						<ul>
+							<li>Introduction d'un champ de déformation dans le Pavage et mélange</li>
+							<li>Compensation des distortions due à la paramétrisation</li>
+							<li>Gestion des discontinuité de texture</li>
+							<li>Permet l'utilisation de texture ultra haute définition à coût mémoire fixe</li>
+						</ul>
+					</div>
+				</div>
 			</section>
 			<section>
 				<div class="grid">
