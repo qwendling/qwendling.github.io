@@ -132,18 +132,25 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class=" SlideSubTitle ">Méthode des éléments finis</div>
-						<ul>
-							<li>Grandes variation dans le champs de déformation</li>
-							<li>Changement important de l'oriantation  à proximité des coutures</li>
-						</ul>
+						<div class="row">
+							<ul>
+								<li>Objet discrétisé en un ensemble d'éléments</li>
+								<li>Fonctions de forme associées à chaque élément</li>
+								<li>Utilisation des fonctions de forme pour résoudre les déformations</li>
+							</ul>
+					
+						</div>
+						<div class="row">
+							<canvas id="FEM_ex" width="550" height="360"></canvas>
+						</div>
 					</div>
 					<div class="col-md-6">
 						<div class=" SlideSubTitle ">Méthodes basée position</div>
 						<ul>
-							<li>Lissage adaptatif</li>
-							<li>Calcul du champs de déformation directement dans le shader</li>
-							<li>Autres application du champs de déformation</li>
+							<li>Objets représentés par un ensemble de particules</li>
+            				<li>Forces remplacées par des contraintes sur la position des particules</li>
 						</ul>
+						<img src="Images/SM_lattice.png" />
 					</div>
 				</div>
 			</section>
@@ -185,6 +192,24 @@
 				<div class="TitleSlide">
 					Simulation Adaptative : Exemple
 				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">Remaillage</div>
+						<div class="row"><img src="Images/Fléchon.png" /></div>
+						<div class="row caption">Fléchon, E., Zara, F., Damiand, G., & Jaillet, F. A unified topological-physical model for adaptive refinement. 2014</div>
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-4">
+						<div class="row">Octree</div>
+						<div class="row"><img src="Images/steinmann.png" /></div>
+						<div class="row caption">Steinemann, Denis, Miguel A. Otaduy, and Markus Gross. "Fast adaptive shape matching deformations." 2008</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row">Maillages imbriqués</div>
+						<div class="row"><img src="Images/Otaduy.png" /></div>
+						<div class="row caption">Otaduy, Miguel A., et al. "Adaptive deformations with fast tight bounds." 2007</div>
+					</div>
+				</div>
 			</section>
 
 			<section>
@@ -208,6 +233,23 @@
 			<section>
 				<div class="TitleSlide">
 					Découpes: Exemple
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="row">Remaillage local</div>
+						<div class="row"><img src="Images/Remaillage.png" /></div>
+						<div class="row caption">Wu, J., Westermann, R., & Dick, C. A survey of physically based simulation of cuts in deformable bodies. 2015</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">Octree</div>
+						<div class="row"><img src="Images/Wu_octree.png" /></div>
+						<div class="row caption">Wu, J., Westermann, R., & Dick, C. Real-time haptic cutting of high-resolution soft tissues.2014</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">Noeuds virtuels</div>
+						<div class="row"><img src="Images/DividedVoxels.png" /></div>
+						<div class="row caption">Qi, D., Milef, N., & De, S. (2021). Divided Voxels: an efficient algorithm for interactive cutting of deformable objects. 2021</div>
+					</div>
 				</div>
 			</section>
 			<!-- <section>
