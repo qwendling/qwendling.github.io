@@ -101,7 +101,7 @@
 					</ul>
 				</div>
 				<img class="r-stretch" src="Images/computer_graphics_simu.png" />
-				<span class="caption">Diziol, Raphael, Jan Bender, and Daniel Bayer. "Robust real-time deformation of incompressible surface meshes." 2011</span>
+				<div class="caption">Diziol, Raphael, Jan Bender, and Daniel Bayer. "Robust real-time deformation of incompressible surface meshes." 2011</span>
 			</section>
 			<!--<section>
 				<div class="grid">
@@ -546,6 +546,31 @@
 				</section>
 			</section>
 			<section>
+				<section>
+					<div class="r-stack SlideTitle ">Contrôle des distorsions par triangle</div>
+					<div class="r-stack SlideSubTitle ">Calcul du gradient de déformation par triangle</div>
+					<div class="row">
+						On considère un triangle avec :
+						<ol>
+							<li>$x_n$ sa normale</li>
+							<li>$x_{ij}$ son arête 3D entre le sommet $x_j$ et $x_i$</li>
+							<li>$u_{ij}$ son arête 2D entre le sommet $u_j$ et $u_i$</li>
+							<li>Le gradient de déformation $F$ s'exprime donc comme :</li>
+							\[  F  = 
+							\begin{bmatrix}
+								\vert       & \vert     &   \vert   \\
+								x_{01}    & x_{02}  &   x_{n} \\
+								\vert       & \vert     &   \vert
+							\end{bmatrix}
+							
+							\begin{bmatrix}
+								\vert              & \vert            &   0 \\
+								u_{01}   & u_{02} &   0 \\
+								\vert              & \vert            &   1 
+							\end{bmatrix}^{-1}  \]
+						</ol>
+					</div>
+				</section>
 				<section>
 					<div class="r-stack SlideTitle ">Contrôle des distorsions par triangle</div>
 					<div class="row">
