@@ -41,7 +41,7 @@
 					<div class="r-stack">
 							<ul>
 								<li>Permet de passer d'un plongement à un autre</li>
-								<li>Définie comme la gradient la fonction de déplacement : \[\begin{aligned} \phi (\bar{x}) &amp; = F*\bar{x} + p  \end{aligned} \]</li>
+								<li>Définie comme le gradient de la fonction de déplacement : \[\begin{aligned} \phi (\bar{x}) &amp; = F*\bar{x} + p  \end{aligned} \]</li>
 							</ul>
 
 					</div>
@@ -64,7 +64,7 @@
 				</div>
 				<div class="r-hstack">
 					<div class="r-stack" style="width:50% ;padding-left: 10px;">
-						Simulation
+						Simulation adaptative
 					</div>
 					<div class="r-stack" style="width:50% ;padding-left: 10px;">
 						Correction lors de la synthèse de texture
@@ -418,7 +418,7 @@
 					<div class="row default_text_size">
 						<ul>
 							<li>Modélisation de la surface 3D</li>
-							<li>Plongement de la surface d'ans l'espace UV</li>
+							<li>Plongement de la surface dans l'espace UV</li>
 							<li>Création des textures</li>
 							<li>Plaquage de la texture sur la surface géométrique</li>
 						</ul>
@@ -443,12 +443,15 @@
 					<div class="row default_text_size">
 						<ul>
 							<li>Paver l'espace UV avec k pavages</li>
-							<li>Chercher le contenue de chaque tuile dans un exemple E</li>
-							<li>Mélanger le contenue des tuiles </li>
+							<li>Chercher le contenu de chaque tuile dans un exemple E</li>
+							<li>Mélanger le contenu des tuiles </li>
 						</ul>
 					</div>
 					<div class="row">
-						<div class="col-md-2"></div>
+						<div class="col-md-4">
+							\[  T \left( \bf{u} \right) = \sum_{i=1}^{k} w_{i} \left( \bf{u} \right) E_{i} \left( \bf{u} \right) \]
+							\[ E_{i}(\bf{u}) = E \left( \bf{u} + \bf{h}_{i} \left( \bf{u} \right) \right) \]
+						</div>
 						<div class="col-md-8"><img  src="Images/TnB.png" /></div>
 						
 					</div>
@@ -461,10 +464,10 @@
 					<div class="row  ">
 
 						<div class="col-md-5 my-auto default_text_size" >
-							<div>La paramètrisation induit :</div>
+							<div>La paramétrisation induit :</div>
 							<ul>
-								<li>Distorsions d'aire</li>
-								<li>Distortion d'angle</li>
+								<li>Distorsion d'aire</li>
+								<li>Distorsion d'angle</li>
 								<li>Découpe visible</li>
 							</ul>
 						</div>
@@ -479,8 +482,8 @@
 				<div class=" SlideSubTitle ">Objectifs :</div>
 				<div class="default_text_size">
 					<ul >
-						<li>Fournir un controle artistique sur le pavage et mélange</li>
-						<li>Compenser les distorsions causé par la paramétrisation</li>
+						<li>Fournir un contrôle artistique sur le pavage et mélange</li>
+						<li>Compenser les distorsions causées par la paramétrisation</li>
 						<li>Réduire la visibilité des découpes</li>
 					</ul>
 				</div>
@@ -488,7 +491,7 @@
 				<div class=" SlideSubTitle ">Contributions :</div>
 				<div class="default_text_size">
 					<ul class="default_text_size">
-						<li>Introduction d'un champs de déformation dans le Pavage et Mélange</li>
+						<li>Introduction d'un champ de déformation dans le Pavage et Mélange</li>
 						<li>Définition du champ de déformation pour la correction des distorsions</li>
 						<li>Gestion de la cohérence de la texture à travers les découpes</li>
 					</ul>
@@ -501,10 +504,10 @@
 			</section>
 			<section>
 				<section>
-					<div class="r-stack SlideTitle ">Champs de déformation dans le pavage et mélange</div>
+					<div class="r-stack SlideTitle ">Champ de déformation dans le pavage et mélange</div>
 					<div class="row default_text_size center_text" style="margin-top: 2em;">
 						<div class="col-md-7">
-							On introduit un champs de déformation $\mathcal{F}(\bf{u})$ dans le pavage et mélange ainsi :
+							On introduit un champ de déformation $\mathcal{F}(\bf{u})$ dans le pavage et mélange ainsi :
 							\[\begin{aligned} E_i(\bf{u}) &amp; = E(\bf{u}+\bf{h}_i(\bf{u}))  \end{aligned} \]
 							Deviens
 							\[\begin{aligned} E_{i} \left( \bf{u} \right) = E \left( \mathcal{F} \left( \bf{u} \right) * \left( \bf{u} - \bf{c}_{i} \left( \bf{u} \right) \right) + \bf{h}_{i} \left( \bf{u} \right) \right)  \end{aligned} \]
@@ -576,7 +579,7 @@
 					<div class="row">
 						<ol>
 							<li>Calcul du gradient de déformation $F$ par triangle</li>
-							<li>Sépartaion de la composante rigide $\mathcal{R}$ de la transformation</li>
+							<li>Séparation de la composante rigide $\mathcal{R}$ de la transformation</li>
 							\[  F = RS = \left( U V^{T} \right) \left( V \Sigma V^{T} \right)  \]
 							<li>On défini le champ de déformation $\mathcal{F}$ à partir de $S$ </li>
 						</ol>
@@ -665,7 +668,7 @@
 					<div class="row">
 						Besoin d'utiliser la meme cellule de chaque coté de la couture
 						<ol>
-							<li>Définition d'une bandes le long de la couture</li>
+							<li>Définition d'une bande le long de la couture</li>
 							<li>Séparation de cette bande en un ensemble de cellules de gauche et de droite</li>
 						</ol>
 					</div>
@@ -687,7 +690,7 @@
 					<div class="row">
 						Besoin d'utiliser la meme cellule de chaque coté de la couture
 						<ol>
-							<li>Définition d'une bandes le long de la couture</li>
+							<li>Définition d'une bande le long de la couture</li>
 							<li>Séparation de cette bande en un ensemble de cellules de gauche et de droite</li>
 							<li>Prise en compte lors de la définition des tuiles :</li>
 						</ol>
@@ -743,8 +746,8 @@
 					<div class="col-md-6">
 						<div class=" SlideSubTitle ">Limitations :</div>
 						<ul>
-							<li>Grandes variation dans le champs de déformation</li>
-							<li>Changement important de l'oriantation  à proximité des coutures</li>
+							<li>Grandes variations dans le champ de déformation</li>
+							<li>Changement important de l'orientation  à proximité des coutures</li>
 						</ul>
 					</div>
 					<div class="col-md-6">
@@ -752,7 +755,7 @@
 						<ul>
 							<li>Lissage adaptatif</li>
 							<li>Calcul du champs de déformation directement dans le shader</li>
-							<li>Autres application du champs de déformation</li>
+							<li>Autres applications du champ de déformation</li>
 						</ul>
 					</div>
 				</div>
@@ -779,8 +782,8 @@
 						<ul>
 							<li>Introduction d'un champ de déformation dans le Pavage et mélange</li>
 							<li>Compensation des distortions due à la paramétrisation</li>
-							<li>Gestion des discontinuité de texture</li>
-							<li>Permet l'utilisation de texture ultra haute définition à coût mémoire fixe</li>
+							<li>Gestion des discontinuités de texture</li>
+							<li>Permet l'utilisation de textures ultra haute définition à coût mémoire fixe</li>
 						</ul>
 					</div>
 				</div>
